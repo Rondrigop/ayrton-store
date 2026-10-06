@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayrton Store — Ropa y Básicos Esenciales</title>
+  <meta name="description" content="Ayrton Store. Catálogo digital de indumentaria urbana y básicos esenciales: camisetas, camperas, shorts y pantalones con pedidos directos por WhatsApp.">
+  <meta name="theme-color" content="#0000c5">
+
+  <!-- Google Font: Outfit (Geometría cálida, pesos 400 a 900) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos A-dam Style Reference -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR (Deep Cobalt #0000c5, 36px) -->
+  <aside class="announcement-bar">
+    <button type="button" class="announcement-nav-btn" aria-label="Anterior">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="announcement-text">
+      Envíos a todo el país • Consultá talles y stock directo por WhatsApp
+    </div>
+    <button type="button" class="announcement-nav-btn" aria-label="Siguiente">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </aside>
+
+  <!-- 2. TOP NAVIGATION (Paper White #ffffff, hairline border, centered logo) -->
+  <header class="header-main">
+    <nav class="nav-container" aria-label="Navegación principal">
+      <!-- Enlaces de categoría (Izquierda) -->
+      <ul class="nav-links-left">
+        <li><a href="#catalogo" class="nav-link" data-filter="Todos">Colección</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Camisetas">Camisetas</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Camperas">Camperas</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Shorts">Shorts</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Pantalones">Pantalones</a></li>
+      </ul>
+
+      <!-- Brand Wordmark (Centro) -->
+      <a href="#" class="brand-wordmark">
+        AYRTON STORE<span class="brand-dot">•</span>
+      </a>
+
+      <!-- Utilidades & WhatsApp (Derecha) -->
+      <div class="nav-utilities-right">
+        <a href="#" id="navWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-pill-whatsapp">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.488-8.414z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. HERO BANNER (Full-bleed lifestyle image, bottom-left overlay) -->
+  <section class="hero-banner-section">
+    <img 
+      class="hero-banner-img" 
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80" 
+      alt="Ayrton Store morning lifestyle"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay-content">
+      <div class="hero-meta-label">Básicos Esenciales & Urban Wear</div>
+      <h1 class="hero-display-headline">Diseñado para durar</h1>
+      <div class="hero-cta-group">
+        <a href="#catalogo" class="btn-pill-primary">Explorar Colección</a>
+        <a href="#" id="heroWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-pill-ghost">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.488-8.414z"/>
+          </svg>
+          <span>Consultar por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TEXT HEADLINE SECTION (Centered editorial break) -->
+  <section class="editorial-intro">
+    <h2 class="editorial-headline">Prendas esenciales, confección honesta</h2>
+    <p class="editorial-subtext">
+      Un lienzo despejado donde cada prenda habla por sí misma. Cortes relajados y materiales resistentes pensados para el uso cotidiano. Consultá disponibilidad y reservá tu talle directamente por WhatsApp.
+    </p>
+  </section>
+
+  <!-- 5. MAIN CATALOG SECTION -->
+  <main class="catalog-section" id="catalogo">
+    <!-- Barra de Herramientas y Filtros (Pills 30px) -->
+    <div class="catalog-bar">
+      <!-- Chips de Categoría -->
+      <nav class="category-chips" aria-label="Categorías de prendas">
+        <button type="button" class="category-chip active" data-category="Todos">Todos</button>
+        <button type="button" class="category-chip" data-category="Camisetas">Camisetas</button>
+        <button type="button" class="category-chip" data-category="Camperas">Camperas</button>
+        <button type="button" class="category-chip" data-category="Shorts">Shorts</button>
+        <button type="button" class="category-chip" data-category="Pantalones">Pantalones</button>
+      </nav>
+
+      <!-- Buscador y Ordenamiento -->
+      <div class="catalog-tools">
+        <div class="search-pill-wrap">
+          <input type="text" id="searchInput" class="search-pill-input" placeholder="Buscar prenda o modelo..." autocomplete="off">
+          <span class="search-pill-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+        </div>
+
+        <select id="sortSelect" class="sort-pill-select" aria-label="Ordenar productos">
+          <option value="default">Relevancia</option>
+          <option value="price-asc">Menor precio</option>
+          <option value="price-desc">Mayor precio</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contador de Resultados -->
+    <div class="products-counter-badge" id="productsCount">Cargando catálogo...</div>
+
+    <!-- Grilla de Tarjetas Planas (0px radius, blanco sobre Morning Mist) -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Inyectado dinámicamente vía app.js -->
+    </div>
+  </main>
+
+  <!-- 6. SUSTAINABILITY & CRAFTSMANSHIP SPLIT SECTION (A-dam signature) -->
+  <section class="sustainability-split">
+    <div class="split-container">
+      <div class="split-text-col">
+        <h3 class="split-title">Algodón seleccionado y confección sin atajos</h3>
+        <p class="split-paragraph">
+          Cada una de nuestras camisetas, camperas, shorts y pantalones se produce bajo estándares rigurosos de durabilidad. Priorizamos hilados de algodón peinado de alto gramaje y procesos de lavado que mantienen la suavidad y el color tras cada lavado.
+        </p>
+        <a href="#" id="splitWhatsAppBtn" target="_blank" rel="noopener noreferrer" class="btn-pill-whatsapp">
+          Consultar por WhatsApp
+        </a>
+      </div>
+      <div class="split-image-col">
+        <img 
+          src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=80" 
+          alt="Materiales y texturas de algodón"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TRUST WIDGET (Bottom-Left Floating Badge) -->
+  <div class="trust-review-widget" title="Calificación de clientes">
+    <span class="star-icon">
+      <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    </span>
+    <span class="score-value">4.9 / 5.0</span>
+    <span class="label-text">• Excelente</span>
+  </div>
+
+  <!-- 8. MODAL DE VISTA RÁPIDA (<dialog> nativo plano) -->
+  <dialog id="productDialog" class="quickview-dialog">
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <!-- 9. FOOTER (Paper White canvas, hairline Cloud Veil divider) -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>AYRTON STORE</h4>
+        <p>Prendas esenciales y moda contemporánea. Confección honesta, materiales duraderos y atención personalizada directa a través de WhatsApp.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Colección</h5>
+        <ul class="footer-links">
+          <li><a href="#catalogo" data-filter="Camisetas">Camisetas</a></li>
+          <li><a href="#catalogo" data-filter="Camperas">Camperas</a></li>
+          <li><a href="#catalogo" data-filter="Shorts">Shorts</a></li>
+          <li><a href="#catalogo" data-filter="Pantalones">Pantalones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto & Envíos</h5>
+        <ul class="footer-links">
+          <li>WhatsApp: +54 9 11 2313-9050</li>
+          <li>Buenos Aires, Argentina</li>
+          <li>Envíos a todo el país</li>
+          <li>Transferencia o Efectivo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ayrton Store. Todos los derechos reservados.</span>
+      <span>Ventas directas vía WhatsApp</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
