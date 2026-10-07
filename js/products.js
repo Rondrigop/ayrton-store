@@ -39,7 +39,7 @@ const PRODUCTS = [
     description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
     image: [
       // CORREGIDO: Barras cambiadas a /
-      "images/hero-banner.png"
+      "images/campera_boca.jpg"
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
     rating: 4.9,
