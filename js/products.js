@@ -31,19 +31,23 @@ function createWhatsAppProductUrl(product, selectedSize = null) {
 // Fotografía luminosa, fondos claros y limpios acorde al estilo A-dam
 const PRODUCTS = [
   // --- CAMISETAS ---
-  {
+ {
     id: 1,
     name: "Campera EQT Boca Juniors",
     category: "Campera",
     price: 260.000,
-    description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
-    image: "Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_21_model.avif","Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_23_hover_model.avif",
+    description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.", // <- Falta coma aquí
+    // CORREGIDO: Transformado en un Array [] y usando rutas relativas con barras normales /
+    images: [
+      "images/Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_21_model.avif",
+      "images/Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_23_hover_model.avif"
+    ], // <- Falta coma aquí
     sizes: ["S", "M", "L", "XL", "XXL"],
     rating: 4.9,
     reviewsCount: 20,
     badge: "Básico",
     inStock: true
-  },
+},
   {
     id: 2,
     name: "Camiseta Boxy Minimalist Deep Navy",
