@@ -37,7 +37,7 @@ const PRODUCTS = [
     category: "Campera",
     price: "260,000",
     description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
-    images: [
+    image: [
       // CORREGIDO: Barras cambiadas a /
       "images/images.jpg",
   "./images/Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_23_hover_model.jpg"
