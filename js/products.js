@@ -39,8 +39,7 @@ const PRODUCTS = [
     description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
     image: [
       // CORREGIDO: Barras cambiadas a /
-      "images/images.jpg",
-  "./images/Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_23_hover_model.jpg"
+      "images/images.jpg"
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
     rating: 4.9,
