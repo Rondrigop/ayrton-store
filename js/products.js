@@ -33,14 +33,14 @@ const PRODUCTS = [
   // --- CAMISETAS ---
   {
     id: 1,
-    name: "Camiseta Regular Fit Heavy Organic Blanca",
-    category: "Camisetas",
-    price: 24500,
-    description: "100% algodón orgánico peinado de 220g. Corte regular contemporáneo con cuello acanalado reforzado. Suavidad extrema al tacto y confección de larga duración.",
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
+    name: "Campera EQT Boca Juniors",
+    category: "Campera",
+    price: 260.000,
+    description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
+    image: "Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_21_model.avif","Campera_Deportiva_EQT_Boca_Juniors_Azul_KH2147_23_hover_model.avif",
     sizes: ["S", "M", "L", "XL", "XXL"],
     rating: 4.9,
-    reviewsCount: 38,
+    reviewsCount: 20,
     badge: "Básico",
     inStock: true
   },
