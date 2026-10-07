@@ -76,16 +76,19 @@ const PRODUCTS = [
 
   // --- CAMPERAS ---
   {
-    id: 4,
-    name: "Campera Windbreaker Coastal Minimal",
+     id: 4,
+    name: "Campera EQT Boca Juniors",
     category: "Camperas",
-    price: 64000,
-    description: "Microfibra técnica mate resistente al viento y lluvia ligera. Forro interior de malla transpirable, capucha ajustable y cierres termosellados.",
-    image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=80",
-    sizes: ["S", "M", "L", "XL"],
-    rating: 5.0,
-    reviewsCount: 31,
-    badge: "Destacado",
+    price: "260,000",
+    description: "Campera deportiva de ajuste holgado con cuello alto y cierre frontal, que brinda comodidad y elegancia.",
+    image: [
+      // CORREGIDO: Barras cambiadas a /
+      "images/campera_boca.jpg"
+    ],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    rating: 4.9,
+    reviewsCount: 20,
+    badge: "Básico",
     inStock: true
   },
   {
