@@ -192,7 +192,7 @@ const PRODUCTS = [
     category: "Pantalones",
     price: 41000,
     description: "Algodón peinado pesado con interior de bucle suave. Cintura ribeteada ajustable y botamanga con puño elástico suave que no aprieta.",
-    image: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=900&q=80",
+    image: "https:c/images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=900&q=80",
     sizes: ["S", "M", "L", "XL"],
     rating: 4.9,
     reviewsCount: 28,
