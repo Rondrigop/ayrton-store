@@ -4,14 +4,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Estado local
-  let state = {
+    let state = {
     activeCategory: 'Todos',
-    searchQuery: '',
+     searchQuery: '',
     sortBy: 'default',
-    selectedSizes: {},
+   selectedSizes: {},
     modalProductId: null,
-    modalSelectedSize: null
-  };
+   modalSelectedSize: null,
+   currentImageIndex: {}   // ← aquí guardaremos el índice activo por producto
+   };
+  
 
   // Elementos DOM
   const productsGrid = document.getElementById('productsGrid');
@@ -71,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Renderizar catálogo
   function renderCatalog() {
     const items = getFilteredItems();
+    // Inicializamos índice de imagen para cada producto si aún no está definido
+    PRODUCTS.forEach(p => {
+      if (state.currentImageIndex[p.id] === undefined) {
+        state.currentImageIndex[p.id] = 0;
+      }
+    });
 
     if (productsCount) {
       productsCount.textContent = `Mostrando ${items.length} ${items.length === 1 ? 'prenda' : 'prendas'}`;
@@ -104,26 +112,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       return `
         <article class="product-card" data-id="${product.id}">
-          <div class="product-media-wrap" onclick="window.openQuickView(${product.id})">
+          <div class="product-media-wrap" data-id="${product.id}" onclick="window.openQuickView(${product.id})">
             <img 
-              src="${product.image}" 
+              src="${product.images[state.currentImageIndex[product.id] ?? 0]}" 
               alt="${product.name}" 
               loading="lazy" 
               decoding="async"
+              class="product-img"
             />
             ${product.badge ? `<span class="product-badge-flag">${product.badge}</span>` : ''}
+
+
+            <button class="img-nav btn-next" onclick="event.stopPropagation(); nextImage(${product.id})" aria-label="Foto siguiente">→</button>
           </div>
 
           <div class="product-brand-line">AYRTON STORE</div>
           <h3 class="product-name-title" onclick="window.openQuickView(${product.id})">${product.name}</h3>
           <div class="product-price-line">${STORE_CONFIG.currency}${product.price.toLocaleString('es-AR')}</div>
 
-          <div class="product-rating-row">
-            <div class="stars-list">
-              ${starSvg}${starSvg}${starSvg}${starSvg}${starSvg}
-            </div>
-            <span class="rating-score-count">(${product.rating || '4.9'})</span>
-          </div>
+          
 
           ${product.sizes && product.sizes.length > 0 ? `
             <div class="sizes-selector-group">
@@ -199,6 +206,45 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCatalog();
     });
   });
+  /* -------------------------------------------------
+   CONTROL DE CARRUSEL DE IMÁGENES POR PRODUCTO
+   ------------------------------------------------- */
+   function prevImage(productId){
+    const prod = PRODUCTS.find(p => p.id === productId);
+    if(!prod) return;
+    //iniciar indice si no existe
+    if ( state.currentImageIndex[productId] === undefined){
+      state.currentImageIndex[productId] = 0;
+    }
+    const total = prod.images.length;
+    state.currentImageIndex[productId] =
+    (state.currentImageIndex[productId] - 1 + total) % total; //ciclo atras
+    
+    //Actualizar src del <img> que esta dentro del contenedor
+    const wrapper =
+    document.querySelector(`.product-media-wrap[data-id="${productId}"]`);
+    if (wrapper) {
+      const img = wrapper.querySelector('img.product-img');
+      img.src = 
+      prod.images[state.currentImageIndex[productId]]
+      ;
+    }
+   }
+   function nextImage(productId) {
+  const prod = PRODUCTS.find(p => p.id === productId);
+  if (!prod) return;
+  if (state.currentImageIndex[productId] === undefined) {
+    state.currentImageIndex[productId] = 0;
+  }
+  const total = prod.images.length;
+  state.currentImageIndex[productId] =
+    (state.currentImageIndex[productId] + 1) % total; // ciclo adelante
+  const wrapper = document.querySelector(`.product-media-wrap[data-id="${productId}"]`);
+  if (wrapper) {
+    const img = wrapper.querySelector('img.product-img');
+    img.src = prod.images[state.currentImageIndex[productId]];
+  }
+}
 
   // Filtros desde la navegación o el footer
   document.querySelectorAll('[data-filter]').forEach(link => {
@@ -251,16 +297,18 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
 
           <div class="quickview-img-box">
-            <img src="${product.image}" alt="${product.name}" />
+            <button class=\"image-nav btn-prev\" onclick=\"event.stopPropagation(); prevImage(${product.id});\" aria-label=\"Foto anterior\">←</button>
+            <button class=\"img-nav btn-next\" onclick=\"event.stopPropagation(); nextImage(${product.id});\" aria-label=\"Foto siguiente\">→</button>
+            <img src=\"${product.images[state.currentImageIndex[product.id] ?? 0]}\" alt=\"${product.name}\" />
           </div>
 
           <div class="quickview-info-box">
             <div class="quickview-brand-tag">AYRTON STORE • ${product.category}</div>
             <h2 class="quickview-title">${product.name}</h2>
             <div class="quickview-price">${STORE_CONFIG.currency}${product.price.toLocaleString('es-AR')}</div>
-            <div class="product-rating-row" style="margin-bottom:1rem;">
-              <div class="stars-list">
-                ${starSvg}${starSvg}${starSvg}${starSvg}${starSvg}
+
+              
+
               </div>
               <span class="rating-score-count">(${product.rating || '4.9'}) • ${product.reviewsCount || 25} reseñas</span>
             </div>
@@ -335,3 +383,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render inicial
   renderCatalog();
 });
+
+// Ocultar botones de navegación de imágenes en tarjetas y vista rápida
+const hideNavStyle = document.createElement('style');
+hideNavStyle.textContent = '.image-nav, .img-nav { display:none !important; }';
+document.head.appendChild(hideNavStyle);
+
+// Ocultar rating y estrellas en tarjetas y vista rápida
+const hideRatingStyle = document.createElement('style');
+hideRatingStyle.textContent = '.rating-score-count, .product-rating-row, .stars-list { display:none !important; }';
+document.head.appendChild(hideRatingStyle);
