@@ -62,7 +62,7 @@ const PRODUCTS = [
 
 // --- REMERAS ---
   {
-    id: 4,
+    id: 3,
     name: "Remera Boca Juniors adidas 26 27 Hombre algodón",
     category: "Remeras",
     price: "89,000",
@@ -86,7 +86,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 4,
+    id: 5,
     name: "Remera OG Boca Juniors",
     category: "Remeras",
     price: "119,000",
@@ -98,7 +98,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 4,
+    id: 6,
     name: "Remera EQT Boca Juniors",
     category: "Remeras",
     price: "139,000",
@@ -110,7 +110,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 4,
+    id: 7,
     name: "Camiseta EQT Boca Juniors",
     category: "Remeras",
     price: "149,000",
@@ -123,7 +123,7 @@ const PRODUCTS = [
   },
 // --- CAMPERAS ---
   {
-     id: 5,
+     id: 8,
     name: "Campera EQT Boca Juniors",
     category: "Camperas",
     price: "219,000",
@@ -135,7 +135,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 6,
+    id: 9,
     name: "Campera Deportiva OG Boca Juniors",
     category: "Camperas",
     price: "199.000",
@@ -147,7 +147,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 7,
+    id: 10,
     name: "Campera Titular Anthem Boca Juniors",
     category: "Camperas",
     price: "209.000",
@@ -159,7 +159,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 8,
+    id: 11,
     name: "Campera Boca Juniors 25 Aniversario Bicampeón de América 2001",
     category: "Camperas",
     price: "209.000",
@@ -171,7 +171,7 @@ const PRODUCTS = [
     inStock: true
   },
    {
-    id: 8,
+    id: 12,
     name: "Campera Deportiva EQT Argentina",
     category: "Camperas",
     price: "209.000",
@@ -183,7 +183,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 2,
+    id: 13,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
     category: "Camperas",
     price: "169,000",
@@ -197,7 +197,7 @@ const PRODUCTS = [
 
   // --- SHORTS ---
   {
-    id: 8,
+    id: 14,
     name: "Shorts Tiro26 Competition Downtime Boca 26/27",
     category: "Shorts",
     price: "120.000",
@@ -209,7 +209,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 9,
+    id: 15,
     name: "Shorts de Entrenamiento de Boca Juniors Tiro 25 Competition",
     category: "Shorts",
     price: "120.000",
@@ -224,7 +224,7 @@ const PRODUCTS = [
 
   // --- PANTALONES ---
   {
-    id: 10,
+    id: 16,
     name: "Pantalón Deportivo EQT Boca Juniors",
     category: "Pantalones",
     price: "179.000",
