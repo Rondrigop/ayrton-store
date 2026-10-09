@@ -809,8 +809,11 @@ z-index: 5;
 
 .split-image-col {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: auto;
-  background-color: transparent;
+  background: transparent;
   border: none;
   overflow: hidden;
 }

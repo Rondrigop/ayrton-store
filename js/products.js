@@ -227,7 +227,7 @@ const PRODUCTS = [
     id: 16,
     name: "Pantalón Deportivo EQT Boca Juniors",
     category: "Pantalones",
-    price: "179.000",
+    price: "179,000",
     description: "Pantalones deportivos de ajuste clásico con cordón ajustable para mayor comodidad personalizada.",
     images: ["images/bocapantaloeqt.avif"],
     sizes: ["L", "XL"],

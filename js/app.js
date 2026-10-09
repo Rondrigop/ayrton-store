@@ -62,9 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (state.sortBy === 'price-asc') {
-      list.sort((a, b) => a.price - b.price);
+      list.sort((a, b) => {
+        const pa = Number(a.price.replace(/[.,]/g, ''));
+        const pb = Number(b.price.replace(/[.,]/g, ''));
+        return pa - pb;
+      });
     } else if (state.sortBy === 'price-desc') {
-      list.sort((a, b) => b.price - a.price);
+      list.sort((a, b) => {
+        const pa = Number(a.price.replace(/[.,]/g, ''));
+        const pb = Number(b.price.replace(/[.,]/g, ''));
+        return pb - pa;
+      });
     }
 
     return list;
