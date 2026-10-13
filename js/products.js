@@ -89,10 +89,10 @@ const PRODUCTS = [
     id: 5,
     name: "Remera OG Boca Juniors",
     category: "Remeras",
-    price: "119,000",
+    price: "109,000",
     description: "Remera de ajuste ceñido con diseño inspirado en la herencia futbolera, para un auténtico estilo de fútbol.",
-    images: ["images/remerabocaazulyamarillo.jpg"],
-    sizes: ["M","L","XL"],
+    images: ["images/Remera_OG_Boca_Juniors_Azul_KH2144_01_laydown.avif"],
+    sizes: ["M","XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
@@ -231,6 +231,18 @@ const PRODUCTS = [
     description: "Pantalones deportivos de ajuste clásico con cordón ajustable para mayor comodidad personalizada.",
     images: ["images/bocapantaloeqt.avif"],
     sizes: ["L", "XL"],
+    reviewsCount: 47,
+    badge: "",
+    inStock: true
+  },
+   {
+    id: 17,
+    name: "Remera EQT Argentina",
+    category: "Remeras",
+    price: "139,000",
+    description: "Remera de ajuste holgado con escote redondo para un estilo relajado inspirado en el fútbol.",
+    images: ["images/Remera_EQT_Argentina_Blanco_KG2288_HM5.avif"],
+    sizes: ["XL"],
     reviewsCount: 47,
     badge: "",
     inStock: true
