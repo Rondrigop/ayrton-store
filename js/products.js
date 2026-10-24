@@ -265,7 +265,7 @@ const PRODUCTS = [
     category: "Camisetas",
     price: "159,000",
     description: "Del origen a la gloria, el dorado recorre toda la historia de Boca. Esta camiseta continúa la celebración de los 120 años, siendo fiel a las raíces del club y homenajeando triunfos inolvidables.",
-    images: ["images/JJ4284_1.jpg"],
+    images: ["images/173727-1200-auto.webp"],
     sizes: ["L"],
     reviewsCount: 24,
     badge: "",
