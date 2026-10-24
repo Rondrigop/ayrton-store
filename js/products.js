@@ -68,7 +68,7 @@ const PRODUCTS = [
     price: "89,000",
     description: "Sumergite en la cultura futbolística con la Remera Boca Juniors adidas 26 27 Hombre algodón, diseñada para los aficionados que viven y respiran por el fútbol. ",
     images: ["images/remerabocaazulyamarillo.jpg"],
-    sizes: ["S","M","L","XL"],
+    sizes: ["XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
@@ -323,7 +323,7 @@ const PRODUCTS = [
     id: 24,
     name: "Campera Parka Boca Juniors Tiro 25",
     category: "Camperas",
-    price: "199,000",
+    price: "259,000",
     description: "Parka de Boca Juniors para que te abrigues bien en la tribuna.",
     images: ["images/D_NQ_NP_2X_667032-MLA88111259299_072025-F.webp"],
     sizes: ["L"],
