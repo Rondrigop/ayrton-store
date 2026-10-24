@@ -46,20 +46,6 @@ const PRODUCTS = [
     badge: "",
     inStock: true
 },
-  {
-    id: 2,
-    name: "Camiseta Manga Larga Boca Juniors adidas Titular 25 26 Hombre",
-    category: "Camisetas",
-    price: "159,000",
-    description: "Rinde homenaje a los 120 años de éxitos ininterrumpidos de Boca Juniors. En un tono más oscuro, viene con un escudo conmemorativo del equipo en el pecho. La tecnología AEROREADY ayuda a mantener a los hinchas secos y cómodos, y el rótulo '1905' en la nuca es un recordatorio de cuándo empezó la leyenda.",
-    images: ["images/camiseta-manga-larga-de-boca-adidas-oficial-azul-100020jm1262001-1_2_.jpg"],
-    sizes: ["L"],
-    reviewsCount: 24,
-    badge: "",
-    inStock: true
-  },
-  
-
 // --- REMERAS ---
   {
     id: 3,
@@ -328,6 +314,30 @@ const PRODUCTS = [
     images: ["images/D_NQ_NP_2X_667032-MLA88111259299_072025-F.webp"],
     sizes: ["L"],
     reviewsCount: 24,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 25,
+    name: "Campera Deportiva Boca Juniors Originals",
+    category: "Camperas",
+    price: "189,000",
+    description: "Campera deportiva con cuello alto para un toque distintivo y elegante.",
+    images: ["images/Campera_Deportiva_Boca_Juniors_Originals_Azul_JZ2753_01_laydown.avif"],
+    sizes: ["XL"],
+    reviewsCount: 24,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 26,
+    name: "Remera Boca Juniors adidas 26 27 Hombre algodón",
+    category: "Remeras",
+    price: "69,000",
+    description: "Remera gráfica con cuello redondo clásico y detalles del club.",
+    images: ["images/Remera_Graphic_Originals_Boca_Juniors_Blanco_KH2157_01_laydown.avif"],
+    sizes: ["L","XL"],
+    reviewsCount: 15,
     badge: "",
     inStock: true
   }
