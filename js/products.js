@@ -367,7 +367,7 @@ const PRODUCTS = [
     inStock: true
   },
   {
-    id: 28,
+    id: 29,
     name: "Buzo Deportivo EQT Boca Jrs",
     category: "Buzos",
     price: "199,000",
