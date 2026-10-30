@@ -341,4 +341,29 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   }
+  ,
+  {
+    id: 27,
+    name: "Morral De Boca Adidas Festival Alternativo Azul",
+    category: "Accesorios",
+    price: "59,999",
+    description: "Dimensiones aproximadas. Largo:16cm. Ancho:5cm. Alto:19cm.Compartimiento principal forrado con amplio bolsillo interno.",
+    images: ["images/istqb.jpg"],
+    sizes: ["Unico"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 28,
+    name: "Morral De Boca Adidas Festival Alternativo Azul",
+    category: "Camisetas",
+    price: "199,000",
+    description: "Camiseta de fútbol con tecnología Climacool para una comodidad fresca y seca dentro y fuera de la cancha.",
+    images: ["images/boca2001.avif"],
+    sizes: ["L","XL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  }
 ];
