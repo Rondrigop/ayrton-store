@@ -159,7 +159,7 @@ const PRODUCTS = [
    {
     id: 12,
     name: "Campera Deportiva EQT Argentina",
-    category: "Camperas",
+    category: "AFA",
     price: "209.000",
     description: "Campera deportiva de cuello alto con ajuste holgado para un estilo futbolístico relajado.",
     images: ["images/EQT_Argentina_Azul_KG2287_HM5.avif"],
@@ -171,7 +171,7 @@ const PRODUCTS = [
   {
     id: 13,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
-    category: "Camperas",
+    category: "Buzos",
     price: "169,000",
     description: "Buzo con felpa francesa para una comodidad cómoda.",
     images: ["images/Buzo_de_Cuello_Redondo_Boca_Juniors_Originals.avif"],
@@ -224,7 +224,7 @@ const PRODUCTS = [
    {
     id: 17,
     name: "Remera EQT Argentina",
-    category: "Remeras",
+    category: "AFA",
     price: "139,000",
     description: "Remera de ajuste holgado con escote redondo para un estilo relajado inspirado en el fútbol.",
     images: ["images/Remera_EQT_Argentina_Blanco_KG2288_HM5.avif"],
@@ -296,7 +296,7 @@ const PRODUCTS = [
   {
     id: 23,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
-    category: "Camperas",
+    category: "Buzos",
     price: "179,000",
     description: "Buzo con capucha inspirado en la herencia, confeccionado en tejido polar para ofrecer una comodidad clásica.",
     images: ["images/Buzo_con_Capucha_Boca_Juniors_OG_Azul_KH2140_01_laydown.avif"],

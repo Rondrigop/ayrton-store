@@ -182,27 +182,26 @@ button, input, select {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-/* Enlaces izquierdos */
+/* Enlaces izquierdos (4 categorías) */
 .nav-links-left {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: flex-end;
+  gap: clamp(0.75rem, 1.2vw, 1.35rem);
   list-style: none;
-  
-  /* 👈 MODIFICA O AGREGA ESTO: */
-  width: max-content;       /* Fuerza a los enlaces a medir solo lo que ocupa su texto */
-  margin-right: auto;       /* Empuja los enlaces hacia la izquierda de su columna */
-  margin-left: -12rem; 
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: var(--font-weight-medium);
   color: var(--color-midcurrent-navy);
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -226,12 +225,31 @@ button, input, select {
   color: var(--color-deep-cobalt);
 }
 
+/* Grupo derecho: enlaces restantes + botón WhatsApp */
+.nav-group-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(0.75rem, 1.2vw, 1.35rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Utilidades derechas */
 .nav-utilities-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.85rem;
+  flex-shrink: 0;
 }
 
 .btn-pill-whatsapp {
@@ -1120,12 +1138,47 @@ z-index: 5;
   }
 }
 
+@media (max-width: 900px) {
+  .nav-container {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-links-left,
+  .nav-links-right {
+    display: none;
+  }
+  .nav-group-right {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .nav-container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .nav-links-left,
+  .nav-links-right {
+    gap: 0.75rem;
+  }
+  .nav-link {
+    font-size: 12.5px;
+  }
+  .btn-pill-whatsapp {
+    padding: 0.5rem 0.9rem;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
     grid-template-columns: 1fr auto;
   }
-  .nav-links-left {
+  .nav-links-left,
+  .nav-links-right {
     display: none;
+  }
+  .nav-group-right {
+    justify-content: flex-end;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
