@@ -356,12 +356,24 @@ const PRODUCTS = [
   },
   {
     id: 28,
-    name: "Morral De Boca Adidas Festival Alternativo Azul",
+    name: "Camiseta Boca Juniors 25 Aniversario Bicampeón de América 2001",
     category: "Camisetas",
     price: "199,000",
     description: "Camiseta de fútbol con tecnología Climacool para una comodidad fresca y seca dentro y fuera de la cancha.",
     images: ["images/boca2001.avif"],
     sizes: ["L","XL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 28,
+    name: "Buzo Deportivo EQT Boca Jrs",
+    category: "Buzos",
+    price: "199,000",
+    description: "Celebrá el legado de Boca Juniors con el buzo EQT Boca Juniors, parte de la colección EQT emblemática. Esta prenda está inspirada en la cultura de fútbol, fusionando la herencia deportiva clásica con la actitud del estilo urbano moderno. ",
+    images: ["images/Buzo_EQT_Boca_Juniors_Azul_KH2151_01_laydown.avif"],
+    sizes: ["L","XL","XXL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
