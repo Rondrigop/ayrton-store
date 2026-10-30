@@ -39,7 +39,7 @@ const PRODUCTS = [
     description: "Rinde homenaje a los 120 años de éxitos ininterrumpidos de Boca Juniors. En un tono más oscuro, viene con un escudo conmemorativo del equipo en el pecho. La tecnología AEROREADY ayuda a mantener a los hinchas secos y cómodos, y el rótulo '1905' en la nuca es un recordatorio de cuándo empezó la leyenda.",
     images: [
       // CORREGIDO: Barras cambiadas a /
-      "images/ADKV2842-1.jpg"
+      "images/d33dd98c-32a0-4c30-bfb9-c6d5b3b82e98.jpg"
     ],
     sizes: ["XL"],
     reviewsCount: 20,
@@ -90,7 +90,7 @@ const PRODUCTS = [
     price: "149,000",
     description: "Remera de ajuste holgado hecha con una estructura de tejido de punto simple para una comodidad fácil.",
     images: ["images/Remera_EQT_Boca_Juniors_Blanco.avif"],
-    sizes: ["M","L","XL","XXL"],
+    sizes: ["S","M","L","XL","XXL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
