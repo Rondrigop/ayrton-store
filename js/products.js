@@ -201,7 +201,7 @@ const PRODUCTS = [
     price: "120.000",
     description: "Entrená como un jugador Xeneize con estos shorts que controlan la humedad.",
     images: ["images/shortoscuro.avif"],
-    sizes: ["L"],
+    sizes: ["M","L"],
     reviewsCount: 35,
     badge: "",
     inStock: true
@@ -374,6 +374,31 @@ const PRODUCTS = [
     description: "Celebrá el legado de Boca Juniors con el buzo EQT Boca Juniors, parte de la colección EQT emblemática. Esta prenda está inspirada en la cultura de fútbol, fusionando la herencia deportiva clásica con la actitud del estilo urbano moderno. ",
     images: ["images/Buzo_EQT_Boca_Juniors_Azul_KH2151_01_laydown.avif"],
     sizes: ["L","XL","XXL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  }
+  ,
+  {
+    id: 30,
+    name: "Campera Deportiva Boca Juniors Stadium",
+    category: "Camperas",
+    price: "199,000",
+    description: "Campera deportiva de ajuste holgado con elegante cierre para una comodidad inspirada en el fútbol.",
+    images: ["images/Campera_Deportiva_Boca_Juniors_Stadium_Blanco_KH2161_01_laydown.avif"],
+    sizes: ["L","XL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 31,
+    name: "Mochila Titular Boca Juniors 26/27",
+    category: "Accesorios",
+    price: "119,000",
+    description: "Mochila de Boca Juniors con diseño inspirado en las camisetas de fútbol para llevar estilo a donde vayas.",
+    images: ["images/Mochila_Titular_Boca_Juniors_26-27_Azul_KY5119_01_00_standard.avif"],
+    sizes: ["Unico"],
     reviewsCount: 15,
     badge: "",
     inStock: true
