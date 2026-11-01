@@ -184,7 +184,7 @@ const PRODUCTS = [
   // --- SHORTS ---
   {
     id: 14,
-    name: "Shorts Tiro26 Competition Downtime Boca 26/27",
+    name: "Short Tiro26 Competition Downtime Boca 26/27",
     category: "Shorts",
     price: "120.000",
     description: "Shorts livianos con cordón ajustable para un uso diario cómodo.",
@@ -196,12 +196,12 @@ const PRODUCTS = [
   },
   {
     id: 15,
-    name: "Shorts de Entrenamiento de Boca Juniors Tiro 25 Competition",
+    name: "Short de Entrenamiento de Boca Juniors Tiro 25 Competition",
     category: "Shorts",
     price: "120.000",
     description: "Entrená como un jugador Xeneize con estos shorts que controlan la humedad.",
     images: ["images/shortoscuro.avif"],
-    sizes: ["M","L"],
+    sizes: ["M"],
     reviewsCount: 35,
     badge: "",
     inStock: true
