@@ -285,7 +285,7 @@ const PRODUCTS = [
     id: 22,
     name: "Campera De Boca Adidas De Lluvia 25 Amarilla",
     category: "Camperas",
-    price: "169,000",
+    price: "179,000",
     description: "La tecnología avanzada RAIN.RDY canaliza el agua lejos de tu cuerpo para que te mantengas seco y concentrado en cada ejercicio.",
     images: ["images/campera-de-boca-adidas-de-lluvia-tiro-25-amarilla-100020jp1927001-1.jpg"],
     sizes: ["L","XL"],
