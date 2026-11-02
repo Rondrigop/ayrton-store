@@ -402,5 +402,17 @@ const PRODUCTS = [
     reviewsCount: 15,
     badge: "",
     inStock: true
+  },
+  {
+    id: 32,
+    name: "Camiseta Alternativa Boca Juniors 26/27- Authentic Match version",
+    category: "Camisetas",
+    price: "239,000",
+    description: "Camiseta de fútbol del Boca Juniors con tejido con tecnología absorbente para ofrecer una sensación de comodidad fresca y seca.",
+    images: ["images/Camiseta_Alternativa_Boca_Juniors_26-27_Blanco_KD1518_01_laydown.avif"],
+    sizes: ["L","XL","XXL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
   }
 ];
