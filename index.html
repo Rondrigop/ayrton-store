@@ -169,6 +169,10 @@
         </div>
 
         <div class="reviews-header-right">
+          <div class="reviews-carousel-arrows">
+            <button type="button" class="reviews-arrow-btn" id="btnReviewPrev" aria-label="Opinión anterior">←</button>
+            <button type="button" class="reviews-arrow-btn" id="btnReviewNext" aria-label="Opinión siguiente">→</button>
+          </div>
           <button type="button" class="btn-pill-primary" id="btnOpenReviewModal">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             Dejar mi opinión
@@ -176,9 +180,11 @@
         </div>
       </div>
 
-      <!-- Grilla de Reseñas de Clientes -->
-      <div class="reviews-grid" id="reviewsContainer">
-        <div class="reviews-loading">Cargando opiniones verificadas...</div>
+      <!-- Carrusel de Reseñas de Clientes -->
+      <div class="reviews-carousel-wrapper">
+        <div class="reviews-track" id="reviewsContainer">
+          <div class="reviews-loading">Cargando opiniones verificadas...</div>
+        </div>
       </div>
     </div>
   </section>
@@ -220,6 +226,19 @@
   <!-- 8. MODAL DE VISTA RÁPIDA (<dialog> nativo plano) -->
   <dialog id="productDialog" class="quickview-dialog">
     <div id="dialogContent"></div>
+  </dialog>
+
+  <!-- MODAL: PREVISUALIZACIÓN DE FOTO (LIGHTBOX POPUP) -->
+  <dialog id="imageLightboxDialog" class="image-lightbox-dialog">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close-btn" id="btnCloseLightbox" aria-label="Cerrar imagen">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="lightbox-img-container">
+        <img id="lightboxImg" src="" alt="Foto de opinión" />
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
   </dialog>
 
   <!-- MODAL: DEJAR OPINIÓN DE CLIENTE -->

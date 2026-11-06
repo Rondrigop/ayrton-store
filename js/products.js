@@ -75,7 +75,7 @@ const PRODUCTS = [
     id: 5,
     name: "Remera OG Boca Juniors",
     category: "Remeras",
-    price: "129,000",
+    price: "139,000",
     description: "Remera de ajuste ceñido con diseño inspirado en la herencia futbolera, para un auténtico estilo de fútbol.",
     images: ["images/Remera_OG_Boca_Juniors_Azul_KH2144_01_laydown.avif"],
     sizes: ["M","L","XL"],
@@ -168,7 +168,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
-  {
+ /*
     id: 13,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
     category: "Buzos",
@@ -179,9 +179,7 @@ const PRODUCTS = [
     reviewsCount: 24,
     badge: "",
     inStock: true
-  },
-
-  // --- SHORTS ---
+  },*/
   {
     id: 14,
     name: "Short Tiro26 Competition Downtime Boca 26/27",
@@ -201,7 +199,7 @@ const PRODUCTS = [
     price: "120.000",
     description: "Entrená como un jugador Xeneize con estos shorts que controlan la humedad.",
     images: ["images/shortoscuro.avif"],
-    sizes: ["M"],
+    sizes: ["M","L"],
     reviewsCount: 35,
     badge: "",
     inStock: true
@@ -293,6 +291,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
+  /*
   {
     id: 23,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
@@ -305,6 +304,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
+  */
   {
     id: 24,
     name: "Campera Parka Boca Juniors Tiro 25",
@@ -411,6 +411,18 @@ const PRODUCTS = [
     description: "Camiseta de fútbol del Boca Juniors con tejido con tecnología absorbente para ofrecer una sensación de comodidad fresca y seca.",
     images: ["images/Camiseta_Alternativa_Boca_Juniors_26-27_Blanco_KD1518_01_laydown.avif"],
     sizes: ["L","XL","XXL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 33,
+    name: "Camiseta Alternativa Boca Juniors 26/27- Authentic Match version",
+    category: "Camisetas",
+    price: "229,000",
+    description: "Símbolo de orgullo y de herencia futbolística, la camiseta titular del Boca Juniors 26/27 es a la vez innovadora e icónica. En homenaje al legado del equipo, combina la tradición con el rendimiento moderno. La tecnología Climacool absorbe el sudor, permitiendo un rendimiento fresco y seco para mayor comodidad y confianza. ",
+    images: ["images/ChatGPT-Image-6-ago-2026-09_36_26-a.m.png"],
+    sizes: ["L"],
     reviewsCount: 15,
     badge: "",
     inStock: true

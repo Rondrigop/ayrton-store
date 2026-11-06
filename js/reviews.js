@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const reviewsAvgScore = document.getElementById('reviewsAvgScore');
   const reviewsCountText = document.getElementById('reviewsCountText');
   const btnOpenReviewModal = document.getElementById('btnOpenReviewModal');
+  const btnReviewPrev = document.getElementById('btnReviewPrev');
+  const btnReviewNext = document.getElementById('btnReviewNext');
   const reviewDialog = document.getElementById('reviewDialog');
   const btnCloseReviewDialog = document.getElementById('btnCloseReviewDialog');
   const reviewForm = document.getElementById('reviewForm');
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentAdminPin = '';
   let selectedFile = null;
-  let activeAdminTab = 'pending'; // 'pending' | 'approved'
+  let activeAdminTab = 'pending';
 
   // SVG Estrellas
   const starFullSvg = `<svg class="star-icon full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return html;
   }
 
-  // 1. CARGAR RESEÑAS PÚBLICAS APROBADAS
+  // 1. CARGAR RESEÑAS PÚBLICAS APROBADAS (CARRUSEL)
   async function loadApprovedReviews() {
     try {
       const { data, error } = await supabaseClient
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewsCountText.textContent = `${data.length} ${data.length === 1 ? 'opinión verificada' : 'opiniones verificadas'}`;
       }
 
-      // Render de tarjetas
+      // Render de tarjetas dentro del carrusel
       reviewsContainer.innerHTML = data.map(rev => {
         const dateStr = new Date(rev.created_at).toLocaleDateString('es-AR', {
           day: '2-digit',
@@ -127,9 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="review-comment-text">"${escapeHtml(rev.comment)}"</p>
 
             ${rev.image_url ? `
-              <div class="review-image-wrap" onclick="window.open('${rev.image_url}', '_blank')">
+              <div class="review-image-wrap" onclick="window.openImageLightbox('${rev.image_url}', '${escapeHtml(rev.name)}')">
                 <img src="${rev.image_url}" alt="Foto enviada por ${escapeHtml(rev.name)}" loading="lazy" />
-                <span class="review-img-badge">Ver foto original ↗</span>
+                <span class="review-img-badge">Ampliar foto 🔍</span>
               </div>
             ` : ''}
 
@@ -140,6 +142,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 Cliente Verificado
               </span>
             </div>
+
+            ${rev.admin_reply ? `
+              <div class="review-admin-reply">
+                <div class="review-reply-header">
+                  <span class="reply-badge-logo">•</span>
+                  <strong>Ayrton Store</strong>
+                  <span class="reply-verified-check">✔ Respuesta oficial</span>
+                </div>
+                <p class="review-reply-text">"${escapeHtml(rev.admin_reply)}"</p>
+              </div>
+            ` : ''}
           </article>
         `;
       }).join('');
@@ -148,6 +161,23 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error al cargar reseñas:', err);
       reviewsContainer.innerHTML = `<p class="reviews-error">No se pudieron cargar las opiniones en este momento.</p>`;
     }
+  }
+
+  // Controles de desplazamiento del Carrusel
+  if (btnReviewPrev && reviewsContainer) {
+    btnReviewPrev.addEventListener('click', () => {
+      const card = reviewsContainer.querySelector('.review-card');
+      const step = card ? (card.offsetWidth + 24) : 320;
+      reviewsContainer.scrollBy({ left: -step, behavior: 'smooth' });
+    });
+  }
+
+  if (btnReviewNext && reviewsContainer) {
+    btnReviewNext.addEventListener('click', () => {
+      const card = reviewsContainer.querySelector('.review-card');
+      const step = card ? (card.offsetWidth + 24) : 320;
+      reviewsContainer.scrollBy({ left: step, behavior: 'smooth' });
+    });
   }
 
   // 2. MODAL DE RESEÑA: INTERACCIÓN DE ESTRELLAS
@@ -183,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. VALIDACIÓN Y PREVISUALIZACIÓN DE FOTO (Anti-malware: solo imágenes reales, máx 3MB)
+  // 3. VALIDACIÓN Y PREVISUALIZACIÓN DE FOTO (Anti-malware: solo imágenes reales, máx 5MB)
   if (reviewImageInput) {
     reviewImageInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
@@ -248,7 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
       let uploadedImageUrl = null;
 
       try {
-        // Subida de imagen si seleccionó archivo
         if (selectedFile) {
           const fileExt = selectedFile.name.split('.').pop().toLowerCase();
           const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
@@ -272,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
           uploadedImageUrl = publicUrlData.publicUrl;
         }
 
-        // Insertar registro en reviews (status 'pendiente')
         const { error: insertError } = await supabaseClient
           .from('reviews')
           .insert([
@@ -311,7 +339,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. APERTURA / CIERRE DE MODALES
+  // 5. APERTURA / CIERRE DE MODALES Y LIGHTBOX POPUP
+  const imageLightboxDialog = document.getElementById('imageLightboxDialog');
+  const btnCloseLightbox = document.getElementById('btnCloseLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  window.openImageLightbox = function(imageUrl, authorName) {
+    if (!imageLightboxDialog || !lightboxImg) return;
+    lightboxImg.src = imageUrl;
+    if (lightboxCaption) {
+      lightboxCaption.textContent = authorName ? `Foto compartida por ${authorName}` : 'Foto de opinión';
+    }
+    imageLightboxDialog.showModal();
+  };
+
+  if (btnCloseLightbox && imageLightboxDialog) {
+    btnCloseLightbox.addEventListener('click', () => {
+      imageLightboxDialog.close();
+    });
+  }
+
+  if (imageLightboxDialog) {
+    imageLightboxDialog.addEventListener('click', (e) => {
+      if (e.target === imageLightboxDialog) {
+        imageLightboxDialog.close();
+      }
+    });
+  }
+
   if (btnOpenReviewModal) {
     btnOpenReviewModal.addEventListener('click', () => {
       reviewDialog.showModal();
@@ -350,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Acceso secreto por URL: si termina en #admin (ideal para celular)
+  // 2. Acceso secreto por URL: si termina en #admin
   function checkUrlHash() {
     if (window.location.hash.toLowerCase() === '#admin') {
       openAdminPanel();
@@ -494,13 +550,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="admin-review-text">"${escapeHtml(item.comment)}"</p>
 
           ${item.image_url ? `
-            <div class="admin-review-img-preview">
-              <a href="${item.image_url}" target="_blank" rel="noopener noreferrer">
-                <img src="${item.image_url}" alt="Foto subida" />
-                <span>Ampliar foto ↗</span>
-              </a>
+            <div class="admin-review-img-preview" onclick="window.openImageLightbox('${item.image_url}', '${escapeHtml(item.name)}')">
+              <img src="${item.image_url}" alt="Foto subida" />
+              <span class="admin-preview-btn">Ampliar foto 🔍</span>
             </div>
           ` : '<span class="admin-no-img">Sin imagen adjunta</span>'}
+
+          <!-- Caja de Respuesta Oficial -->
+          <div class="admin-reply-composer">
+            <label class="admin-reply-label">💬 Responder como Ayrton Store (opcional):</label>
+            <textarea class="form-textarea admin-reply-textarea" id="reply-input-${item.id}" placeholder="Escribe aquí tu respuesta para este cliente (ej: ¡Muchas gracias por tu compra! Que la disfrutes)..." rows="2">${escapeHtml(item.admin_reply || '')}</textarea>
+          </div>
 
           <div class="admin-actions-row">
             <button type="button" class="btn-admin-approve" onclick="window.moderateItem(${item.id}, 'aprobado')">
@@ -515,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
-  // Cargar reseñas que ya están aprobadas/publicadas para poder darlas de baja
+  // Cargar reseñas publicadas para admin
   async function loadAdminApprovedReviews() {
     try {
       const { data, error } = await supabaseClient
@@ -551,13 +611,27 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="admin-review-text">"${escapeHtml(item.comment)}"</p>
 
             ${item.image_url ? `
-              <div class="admin-review-img-preview">
-                <a href="${item.image_url}" target="_blank" rel="noopener noreferrer">
-                  <img src="${item.image_url}" alt="Foto subida" />
-                  <span>Ampliar foto ↗</span>
-                </a>
+              <div class="admin-review-img-preview" onclick="window.openImageLightbox('${item.image_url}', '${escapeHtml(item.name)}')">
+                <img src="${item.image_url}" alt="Foto subida" />
+                <span class="admin-preview-btn">Ampliar foto 🔍</span>
               </div>
             ` : '<span class="admin-no-img">Sin imagen adjunta</span>'}
+
+            <!-- Caja de Respuesta Oficial -->
+            <div class="admin-reply-composer">
+              <label class="admin-reply-label">💬 Respuesta oficial de Ayrton Store:</label>
+              <textarea class="form-textarea admin-reply-textarea" id="reply-input-${item.id}" placeholder="Escribe o edita la respuesta para este cliente..." rows="2">${escapeHtml(item.admin_reply || '')}</textarea>
+              <div class="admin-reply-actions">
+                <button type="button" class="btn-admin-save-reply" onclick="window.saveAdminReply(${item.id})">
+                  ${item.admin_reply ? '💾 Guardar cambios en respuesta' : '💬 Publicar respuesta'}
+                </button>
+                ${item.admin_reply ? `
+                  <button type="button" class="btn-admin-remove-reply" onclick="window.removeAdminReply(${item.id})">
+                    Quitar respuesta
+                  </button>
+                ` : ''}
+              </div>
+            </div>
 
             <div class="admin-actions-row">
               <button type="button" class="btn-admin-delete" onclick="window.deletePublishedReview(${item.id})">
@@ -572,6 +646,45 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error al cargar publicadas para admin:', err);
     }
   }
+
+  // Guardar respuesta oficial del admin
+  window.saveAdminReply = async function(id) {
+    if (!currentAdminPin) return;
+    const input = document.getElementById(`reply-input-${id}`);
+    if (!input) return;
+    const text = input.value.trim();
+
+    try {
+      const { error } = await supabaseClient.rpc('reply_review', {
+        review_id: id,
+        reply_text: text,
+        admin_pin: currentAdminPin
+      });
+
+      if (error) {
+        if (error.message && (error.message.includes('reply_review') || error.code === 'PGRST202')) {
+          alert('Para responder comentarios, ejecuta primero en el SQL Editor de Supabase el script SQL que te compartiré para habilitar las respuestas oficiales.');
+          return;
+        }
+        throw error;
+      }
+
+      alert('¡Respuesta guardada con éxito!');
+      await loadAllAdminData();
+      await loadApprovedReviews();
+
+    } catch (err) {
+      alert('Error al guardar respuesta: ' + err.message);
+    }
+  };
+
+  // Quitar respuesta del admin
+  window.removeAdminReply = async function(id) {
+    if (!confirm('¿Deseas quitar la respuesta oficial para este comentario?')) return;
+    const input = document.getElementById(`reply-input-${id}`);
+    if (input) input.value = '';
+    await window.saveAdminReply(id);
+  };
 
   // Eliminar / dar de baja reseña ya publicada
   window.deletePublishedReview = async function(id) {
@@ -590,7 +703,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (error) throw error;
 
-      // Actualizar listas
       await loadAdminApprovedReviews();
       await loadApprovedReviews();
       alert('La opinión ha sido eliminada de la tienda.');
@@ -608,6 +720,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!confirm(actionText)) return;
 
     try {
+      // Si el admin escribió una respuesta antes de aprobar, intentamos guardarla
+      const replyInput = document.getElementById(`reply-input-${id}`);
+      if (replyInput && replyInput.value.trim()) {
+        try {
+          await supabaseClient.rpc('reply_review', {
+            review_id: id,
+            reply_text: replyInput.value.trim(),
+            admin_pin: currentAdminPin
+          });
+        } catch (_) {}
+      }
+
       const { error } = await supabaseClient.rpc('moderate_review', {
         review_id: id,
         new_status: newStatus,
@@ -616,7 +740,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (error) throw error;
 
-      // Recargar listas
       await loadPendingReviews();
       await loadAdminApprovedReviews();
       await loadApprovedReviews();
@@ -642,4 +765,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Carga inicial de reseñas aprobadas
   loadApprovedReviews();
 });
-

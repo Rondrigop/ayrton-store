@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayrton Store — Ropa original de Boca Juniors</title>
+  <meta name="description" content="Ayrton Store. Catálogo digital de indumentaria de Boca Juniors.">
+  <meta name="theme-color" content="#0000c5">
+
+  <!-- Favicon (Icono de la pestaña del navegador) -->
+  <link rel="icon" type="image/png" href="images/escudodeboca.png">
+  <link rel="apple-touch-icon" href="images/escudodeboca.png">
+
+  <!-- Google Font: Outfit (Geometría cálida, pesos 400 a 900) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos A-dam Style Reference -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR (Deep Cobalt #0000c5, 36px) -->
+  <aside class="announcement-bar">
+    <!--<button type="button" class="announcement-nav-btn" aria-label="Anterior">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>-->
+    <div class="announcement-text">
+      Envíos a todo el país • Consultá talles y stock directo por WhatsApp
+    </div>
+    <!--<button type="button" class="announcement-nav-btn" aria-label="Siguiente">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>-->
+  </aside>
+
+  <!-- 2. TOP NAVIGATION (Paper White #ffffff, hairline border, centered logo) -->
+  <header class="header-main">
+    <nav class="nav-container" aria-label="Navegación principal">
+      <!-- Enlaces de categoría (Izquierda - 4 categorías) -->
+      <ul class="nav-links-left">
+        <li><a href="#catalogo" class="nav-link" data-filter="Todos">Colección</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Camisetas">Camisetas</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Camperas">Camperas</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="Buzos">Buzos</a></li>
+        <li><a href="#catalogo" class="nav-link" data-filter="AFA">AFA</a></li>
+      </ul>
+
+      <!-- Brand Wordmark (Centro) -->
+      <a href="#" class="brand-wordmark">
+        <span class="brand-dot">•</span>AYRTON STORE<span class="brand-dot">•</span>
+      </a>
+
+      <!-- Enlaces de categoría (Derecha) & WhatsApp -->
+      <div class="nav-group-right">
+        <ul class="nav-links-right">
+          <li><a href="#catalogo" class="nav-link" data-filter="Remeras">Remeras</a></li>
+          <li><a href="#catalogo" class="nav-link" data-filter="Shorts">Shorts</a></li>
+          <li><a href="#catalogo" class="nav-link" data-filter="Pantalones">Pantalones</a></li>
+          <li><a href="#catalogo" class="nav-link" data-filter="Accesorios">Accesorios</a></li>
+          
+        </ul>
+
+        <!-- Utilidades & WhatsApp (Derecha) -->
+        <div class="nav-utilities-right">
+          <a href="#" id="navWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-pill-whatsapp">
+            <svg viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.488-8.414z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. HERO BANNER (Full-bleed lifestyle image, bottom-left overlay) -->
+  <section class="hero-banner-section">
+    <img 
+      class="hero-banner-img" 
+      src="images\wmremove-transformed.jpeg" 
+      alt="Ayrton Store"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay-content">
+      <div class="hero-meta-label">Siempre mono nunca sapo</div>
+      <h1 class="hero-display-headline">AYRTON STORE</h1>
+      <div class="hero-cta-group">
+        <a href="#catalogo" class="btn-pill-primary">Explorar Colección</a>
+        <a href="#" id="heroWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-pill-ghost">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.488-8.414z"/>
+          </svg>
+          <span>Consultar por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TEXT HEADLINE SECTION (Centered editorial break) -->
+  <section class="editorial-intro">
+    <h2 class="editorial-headline">Todos los productos son originales</h2>
+    <p class="editorial-subtext">
+      En Ayrton Store trabajamos unicamente con productos originales,no manejamos replicas ni "importados". Consultá disponibilidad y reservá tu talle directamente por WhatsApp.
+      El precio publicado es por entregas precenciales o envio gratis a la sucursal que te quede más comoda de Correo Argentino/Andreani.
+      Hacemos envios al exterior,consultanos por Whatsapp.
+    </p>
+  </section>
+
+  <!-- 5. MAIN CATALOG SECTION -->
+  <main class="catalog-section" id="catalogo">
+    <!-- Barra de Herramientas y Filtros (Pills 30px) -->
+    <div class="catalog-bar">
+      <!-- Chips de Categoría -->
+      <nav class="category-chips" aria-label="Categorías de prendas">
+        <button type="button" class="category-chip" data-category="Todos">Todos</button>
+        <button type="button" class="category-chip" data-category="Camisetas">Camisetas</button>
+        <button type="button" class="category-chip" data-category="Camperas">Camperas</button>
+        <button type="button" class="category-chip" data-category="Buzos">Buzos</button>
+        <button type="button" class="category-chip" data-category="Remeras">Remeras</button>
+        <button type="button" class="category-chip" data-category="Shorts">Shorts</button>
+        <button type="button" class="category-chip" data-category="Pantalones">Pantalones</button>
+        <button type="button" class="category-chip" data-category="Accesorios">Accesorios</button>
+        <button type="button" class="category-chip" data-category="AFA">AFA</button>
+      </nav>
+
+      <!-- Buscador y Ordenamiento -->
+      <div class="catalog-tools">
+        <div class="search-pill-wrap">
+          <input type="text" id="searchInput" class="search-pill-input" placeholder="Buscar prenda o modelo..." autocomplete="off">
+          <span class="search-pill-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+        </div>
+
+        <select id="sortSelect" class="sort-pill-select" aria-label="Ordenar productos">
+          <option value="default">Relevancia</option>
+          <option value="price-asc">Menor precio</option>
+          <option value="price-desc">Mayor precio</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contador de Resultados -->
+    <div class="products-counter-badge" id="productsCount">Cargando catálogo...</div>
+
+    <!-- Grilla de Tarjetas Planas (0px radius, blanco sobre Morning Mist) -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Inyectado dinámicamente vía app.js -->
+    </div>
+  </main>
+
+  <!-- 6. SECCIÓN DE OPINIONES DE CLIENTES -->
+  <section class="reviews-section" id="opiniones">
+    <div class="reviews-container">
+      <div class="reviews-header">
+        <div class="reviews-header-left">
+          <span class="reviews-tag">EXPERIENCIAS REALES • AYRTON STORE</span>
+          <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
+          <div class="reviews-summary-badge">
+            <span class="reviews-star-badge">★</span>
+            <span class="reviews-avg-number" id="reviewsAvgScore">5.0</span>
+            <span class="reviews-count-label" id="reviewsCountText">Cargando opiniones...</span>
+          </div>
+        </div>
+
+        <div class="reviews-header-right">
+          <button type="button" class="btn-pill-primary" id="btnOpenReviewModal">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Dejar mi opinión
+          </button>
+        </div>
+      </div>
+
+      <!-- Grilla de Reseñas de Clientes -->
+      <div class="reviews-grid" id="reviewsContainer">
+        <div class="reviews-loading">Cargando opiniones verificadas...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SUSTAINABILITY & CRAFTSMANSHIP SPLIT SECTION (A-dam signature) -->
+  <section class="sustainability-split">
+    <div class="split-container">
+      <div class="split-text-col">
+        <h3 class="split-title">Pasión por Boca en cada prenda</h3>
+        <p class="split-paragraph">
+          En <strong>Ayrton Store</strong> compartimos la misma pasión que llevas en el corazón: el orgullo de ser xeneize. Todos nuestros productos cuentan con publicacion en Mercado Libre nos podes consultar por Whatsapp y te enviamos los links.
+          Si no encontras tu talle hablanos que te lo conseguimos.
+        </p>
+        <a href="#" id="splitWhatsAppBtn" target="_blank" rel="noopener noreferrer" class="btn-pill-whatsapp">
+          Consultar por WhatsApp
+        </a>
+      </div>
+      <div class="split-image-col">
+        <img 
+          src="images\nuevologo2.jpg" 
+          alt="Ayrton Store"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+ <!-- 7. TRUST WIDGET (Bottom-Left Floating Badge) -- DESACTIVADO -->
+<!-- 
+  <div class="trust-review-widget" title="Calificación de clientes">
+    <span class="star-icon">
+      <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    </span>
+    <span class="score-value">4.9 / 5.0</span>
+    <span class="label-text">• Excelente</span>
+  </div>
+-->
+
+  <!-- 8. MODAL DE VISTA RÁPIDA (<dialog> nativo plano) -->
+  <dialog id="productDialog" class="quickview-dialog">
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <!-- MODAL: DEJAR OPINIÓN DE CLIENTE -->
+  <dialog id="reviewDialog" class="review-dialog">
+    <div class="review-dialog-inner">
+      <button type="button" class="btn-close-dialog" id="btnCloseReviewDialog" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="review-dialog-header">
+        <span class="review-dialog-tag">AYRTON STORE • EXPERIENCIAS</span>
+        <h3>Compartí tu opinión</h3>
+        <p>Contanos qué te pareció la prenda, el talle y la atención.</p>
+      </div>
+
+      <form id="reviewForm" class="review-form">
+        <!-- Calificación en Estrellas -->
+        <div class="form-group-rating">
+          <label class="form-label">Calificación:</label>
+          <div class="star-rating-input">
+            <span data-value="1" class="active">★</span>
+            <span data-value="2" class="active">★</span>
+            <span data-value="3" class="active">★</span>
+            <span data-value="4" class="active">★</span>
+            <span data-value="5" class="active">★</span>
+          </div>
+          <input type="hidden" id="reviewRatingValue" value="5" />
+        </div>
+
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="reviewName" class="form-label">Tu nombre o apodo:</label>
+          <input type="text" id="reviewName" class="form-input" placeholder="Ej: Lucas M." required maxlength="40" />
+        </div>
+
+        <!-- Comentario -->
+        <div class="form-group">
+          <label for="reviewComment" class="form-label">Tu comentario:</label>
+          <textarea id="reviewComment" class="form-textarea" placeholder="¿Qué te pareció la calidad, el talle y el envío?..." required rows="3" maxlength="500"></textarea>
+        </div>
+
+        <!-- Subida de Foto del Producto -->
+        <div class="form-group">
+          <label class="form-label">Foto de tu pedido recibido (opcional, máx 5 MB):</label>
+          <div class="file-upload-box">
+            <input type="file" id="reviewImageInput" accept="image/png, image/jpeg, image/jpg, image/webp" class="file-native-input" />
+            <div class="file-upload-visual">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span>Subir foto de la prenda</span>
+              <small>Formatos: JPG, PNG, WEBP (hasta 5MB)</small>
+            </div>
+          </div>
+
+          <div id="imagePreviewWrap" class="image-preview-wrap" style="display:none;">
+            <img id="imagePreviewImg" src="" alt="Previsualización" />
+            <button type="button" id="btnRemovePreview" class="btn-remove-preview">Quitar foto</button>
+          </div>
+        </div>
+
+        <div id="reviewMsg" class="review-msg"></div>
+
+        <button type="submit" class="btn-pill-primary btn-submit-review" id="reviewSubmitBtn">
+          Publicar opinión
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- MODAL: PANEL DE MODERACIÓN (ADMIN) -->
+  <dialog id="adminDialog" class="admin-dialog">
+    <div class="admin-dialog-inner">
+      <button type="button" class="btn-close-dialog" id="btnCloseAdminDialog" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="admin-dialog-header">
+        <span class="admin-dialog-tag">SEGURIDAD Y CONTROL</span>
+        <h3>Moderación de Reseñas</h3>
+      </div>
+
+      <!-- Paso 1: Autenticación con Contraseña -->
+      <div id="adminAuthStep" class="admin-auth-box">
+        <p>Ingresa la clave de administrador para revisar, aprobar o descartar opiniones y fotos.</p>
+        <div class="admin-pin-row">
+          <input type="password" id="adminPinInput" class="form-input" placeholder="Contraseña..." autocomplete="current-password" />
+          <button type="button" class="btn-pill-primary" id="btnAdminLogin">Ingresar</button>
+        </div>
+        <div id="adminErrorMsg" class="admin-error-text"></div>
+      </div>
+
+      <!-- Paso 2: Lista de Comentarios (Pendientes y Publicadas) -->
+      <div id="adminListStep" class="admin-list-box" style="display:none;">
+        <div class="admin-tabs-row">
+          <button type="button" class="admin-tab-btn active" id="tabPendingBtn">Pendientes (<span id="countPendingBadge">0</span>)</button>
+          <button type="button" class="admin-tab-btn" id="tabApprovedBtn">Publicadas (<span id="countApprovedBadge">0</span>)</button>
+          <button type="button" id="btnAdminLogout" class="btn-link-logout" style="margin-left: auto;">Cerrar sesión</button>
+        </div>
+        <div id="adminPendingContainer" class="admin-pending-container">
+          <!-- Inyectado vía reviews.js -->
+        </div>
+        <div id="adminApprovedContainer" class="admin-pending-container" style="display:none;">
+          <!-- Inyectado vía reviews.js -->
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 9. FOOTER (Paper White canvas, hairline Cloud Veil divider) -->
+  <footer class="footer-main">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>AYRTON STORE</h4>
+        <p>¡Seguinos en instagram!</p>
+        <a href="https://www.instagram.com/ayrton_store_?stkn=MTB5ZWUxeTZxN2F6ag==" target="_blank" rel="noopener noreferrer" class="link-resaltado">
+      @ayrton_store
+    </a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Colección</h5>
+        <ul class="footer-links">
+          <li><a href="#catalogo" data-filter="Camisetas">Camisetas</a></li>
+          <li><a href="#catalogo" data-filter="Camperas">Camperas</a></li>
+          <li><a href="#catalogo" data-filter="Buzos">Buzos</a></li>
+          <li><a href="#catalogo" data-filter="Remeras">Remeras</a></li>
+          <li><a href="#catalogo" data-filter="Shorts">Shorts</a></li>
+          <li><a href="#catalogo" data-filter="Pantalones">Pantalones</a></li>
+          <li><a href="#catalogo" data-filter="Accesorios">Accesorios</a></li>
+          <li><a href="#catalogo" data-filter="AFA">AFA</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto & Envíos</h5>
+<ul class="footer-links">
+  <!-- WhatsApp Resaltado -->
+  <li>
+    <a href="https://wa.me/5491123139050" target="_blank" rel="noopener noreferrer" class="link-resaltado">
+      WhatsApp: +54 9 11 2313-9050
+    </a>
+  </li>
+  
+  <!-- Instagram Resaltado (Reemplaza 'tu_usuario' por tu perfil real) -->
+  <li>
+    <a href="https://www.instagram.com/ayrton_store_?stkn=MTB5ZWUxeTZxN2F6ag==" target="_blank" rel="noopener noreferrer" class="link-resaltado">
+      Instagram: @ayrton_store
+    </a>
+  </li>
+  
+  <li>Buenos Aires, Argentina</li>
+  <li>Envíos a todo el país</li>
+  <li>Transferencia o Efectivo</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ayrton Store. Todos los derechos reservados.</span>
+      <span>Powered by Rondrigo<span id="secretAdminTrigger" style="cursor: default; user-select: none;">®</span></span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>
