@@ -47,6 +47,7 @@ const PRODUCTS = [
     inStock: true
 },
 // --- REMERAS ---
+  /*
   {
     id: 3,
     name: "Remera Boca Juniors adidas 26 27 Hombre algodón",
@@ -59,6 +60,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
+  */
   {
     id: 4,
     name: "Remera Boca Juniors adidas 2026 Hombre",
@@ -262,7 +264,7 @@ const PRODUCTS = [
     price: "289,000",
     description: "Campera impermeable con capucha plegable para una comodidad fiable en condiciones de lluvia o humedad.",
     images: ["images/Campera_Impermeable_Boca_Juniors_26-27_Azul_KB6271_01_laydown.jpg"],
-    sizes: ["L","XL"],
+    sizes: ["M","L","XL"],
     reviewsCount: 24,
     badge: "",
     inStock: true
