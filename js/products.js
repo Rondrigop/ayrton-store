@@ -68,7 +68,7 @@ const PRODUCTS = [
     price: "139,000",
     description: "La Remera Boca Juniors adidas 2026 Hombre está inspirada en los colores emblemáticos del club y ofrece un look seguro para los días de partido, la vida en la ciudad y todo lo que te imagines.",
     images: ["images/ubegarca.jpg"],
-    sizes: ["L","XL"],
+    sizes: ["XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
@@ -153,7 +153,7 @@ const PRODUCTS = [
     price: "209.000",
     description: "Campera deportiva con el escudo del equipo para un estilo inspirado en el fútbol.",
     images: ["images/Campera_Boca_Juniors_25_Aniversario_Bicampeon_de_America_2001.avif"],
-    sizes: ["L", "XL"],
+    sizes: ["XL"],
     reviewsCount: 29,
     badge: "",
     inStock: true
@@ -170,18 +170,18 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
- /*
+ {
     id: 13,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
     category: "Buzos",
-    price: "169,000",
+    price: "189,990",
     description: "Buzo con felpa francesa para una comodidad cómoda.",
     images: ["images/Buzo_de_Cuello_Redondo_Boca_Juniors_Originals.avif"],
     sizes: ["XL"],
     reviewsCount: 24,
     badge: "",
     inStock: true
-  },*/
+  },
   {
     id: 14,
     name: "Short Tiro26 Competition Downtime Boca 26/27",
@@ -293,20 +293,20 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
-  /*
-  {
+  
+  /*{
     id: 23,
     name: "Buzo de Cuello Redondo Boca Juniors Originals",
     category: "Buzos",
-    price: "179,000",
+    price: "189,990",
     description: "Buzo con capucha inspirado en la herencia, confeccionado en tejido polar para ofrecer una comodidad clásica.",
     images: ["images/Buzo_con_Capucha_Boca_Juniors_OG_Azul_KH2140_01_laydown.avif"],
     sizes: ["XL"],
     reviewsCount: 24,
     badge: "",
     inStock: true
-  },
-  */
+  },*/
+   
   {
     id: 24,
     name: "Campera Parka Boca Juniors Tiro 25",
@@ -319,6 +319,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
+
   {
     id: 25,
     name: "Campera Deportiva Boca Juniors Originals",
@@ -397,7 +398,7 @@ const PRODUCTS = [
     id: 31,
     name: "Mochila Titular Boca Juniors 26/27",
     category: "Accesorios",
-    price: "119,000",
+    price: "129,000",
     description: "Mochila de Boca Juniors con diseño inspirado en las camisetas de fútbol para llevar estilo a donde vayas.",
     images: ["images/Mochila_Titular_Boca_Juniors_26-27_Azul_KY5119_01_00_standard.avif"],
     sizes: ["Unico"],
@@ -424,7 +425,7 @@ const PRODUCTS = [
     price: "229,000",
     description: "Símbolo de orgullo y de herencia futbolística, la camiseta titular del Boca Juniors 26/27 es a la vez innovadora e icónica. En homenaje al legado del equipo, combina la tradición con el rendimiento moderno. La tecnología Climacool absorbe el sudor, permitiendo un rendimiento fresco y seco para mayor comodidad y confianza. ",
     images: ["images/742118-1200-auto.webp"],
-    sizes: ["L"],
+    sizes: ["L","XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
@@ -437,6 +438,18 @@ const PRODUCTS = [
     description: "Símbolo de orgullo y de herencia futbolística, la camiseta titular del Boca Juniors 26/27 es a la vez innovadora e icónica. En homenaje al legado del equipo, combina la tradición con el rendimiento moderno. La tecnología Climacool absorbe el sudor, permitiendo un rendimiento fresco y seco para mayor comodidad y confianza. ",
     images: ["images/WhatsApp Image 2026-11-07 at 13.01.04.jpeg"],
     sizes: ["XL"],
+    reviewsCount: 15,
+    badge: "",
+    inStock: true
+  },
+  {
+    id: 35,
+    name: "Camiseta Alternativa Boca Juniors 26/27 Manga Larga Versión Jugador",
+    category: "Camisetas",
+    price: "299,000",
+    description: "Camiseta de ajuste ceñido del Boca Juniors en tejido absorbente para una comodidad fresca y seca.",
+    images: ["images/Camiseta_Alternativa_Boca_Juniors_26-27_Manga_Larga_Version_Jugador_Blanco_KB6248_01_laydown.avif"],
+    sizes: ["M","L","XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
