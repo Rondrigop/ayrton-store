@@ -398,7 +398,7 @@ const PRODUCTS = [
     id: 31,
     name: "Mochila Titular Boca Juniors 26/27",
     category: "Accesorios",
-    price: "129,000",
+    price: "129,999",
     description: "Mochila de Boca Juniors con diseño inspirado en las camisetas de fútbol para llevar estilo a donde vayas.",
     images: ["images/Mochila_Titular_Boca_Juniors_26-27_Azul_KY5119_01_00_standard.avif"],
     sizes: ["Unico"],
