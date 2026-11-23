@@ -357,7 +357,7 @@ const PRODUCTS = [
     badge: "",
     inStock: true
   },
-  {
+  /*{
     id: 28,
     name: "Camiseta Boca Juniors 25 Aniversario Bicampeón de América 2001",
     category: "Camisetas",
@@ -368,7 +368,7 @@ const PRODUCTS = [
     reviewsCount: 15,
     badge: "",
     inStock: true
-  },
+  },*/
   {
     id: 29,
     name: "Buzo Deportivo EQT Boca Jrs",
@@ -434,10 +434,10 @@ const PRODUCTS = [
     id: 34,
     name: "Camiseta titular Boca Juniors 26/27 manga larga versión jugador",
     category: "Camisetas",
-    price: "269,000",
+    price: "279,990",
     description: "Símbolo de orgullo y de herencia futbolística, la camiseta titular del Boca Juniors 26/27 es a la vez innovadora e icónica. En homenaje al legado del equipo, combina la tradición con el rendimiento moderno. La tecnología Climacool absorbe el sudor, permitiendo un rendimiento fresco y seco para mayor comodidad y confianza. ",
     images: ["images/WhatsApp Image 2026-11-07 at 13.01.04.jpeg"],
-    sizes: ["XL"],
+    sizes: ["L","XL"],
     reviewsCount: 15,
     badge: "",
     inStock: true
